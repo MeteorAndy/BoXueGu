@@ -55,9 +55,9 @@ public class RegisterActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
                 saveRegisterInfo(userName, psw);
-                Intent data = new Intent();
-                data.putExtra("userName", userName);
-                setResult(RESULT_OK, data);
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                intent.putExtra("userName", userName);
+                startActivity(intent);
                 RegisterActivity.this.finish();
             }
         });
@@ -78,6 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
         return has_userName;
     }
+
     private void saveRegisterInfo(String userName, String psw) {
         String md5Psw = MD5Utils.md5(psw);
         SharedPreferences sp = getSharedPreferences("loginInfo", MODE_PRIVATE);
