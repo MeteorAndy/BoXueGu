@@ -1,7 +1,5 @@
 package com.boxuegu.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
@@ -9,7 +7,8 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.boxuegu.MainActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.boxuegu.R;
 
 import java.util.Timer;
@@ -42,7 +41,7 @@ public class SplashActivity extends AppCompatActivity {
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                Intent intent = new Intent(SplashActivity.this, RegisterActivity.class);
                 startActivity(intent);
                 SplashActivity.this.finish();
             }
